@@ -9,20 +9,16 @@ import { MessageComponent } from './messages.component';
 import { NewMessageComponent } from './new-messages.component';
 import { WebService } from './web.service';
 
-import {
-  MatButtonModule,
-  MatCardModule,
-  MatInputModule,
-  MatSnackBarModule,
-  MatToolbarModule
-} from '@angular/material';
+import { MatButtonModule, MatCardModule, MatInputModule, MatSnackBarModule, MatToolbarModule } from '@angular/material';
+import { NavComponent } from './nav/nav.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     MessageComponent,
-    NewMessageComponent
+    NewMessageComponent,
+    NavComponent
   ],
   imports: [
     HttpModule,
