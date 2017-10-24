@@ -10,12 +10,13 @@ export class WebService {
     messages = []
 
     constructor(private http: Http, private sb: MatSnackBar) {
-        this.getMessages();
+        this.getMessages('');
     }
 
-    async getMessages() {
+    async getMessages(user) {
+        user = user ? '/' + user : '';
         try {
-            var response = await this.http.get(this.BASE_USRL + '/messages').toPromise();
+            var response = await this.http.get(this.BASE_USRL + '/messages' + user).toPromise();
             this.messages = response.json();
         } catch (error) {
             this.handleError('Unable to GET messages');
