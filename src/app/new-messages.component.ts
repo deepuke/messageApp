@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component} from '@angular/core';
 import { WebService } from './web.service';
 @Component({
     selector: 'new-messages',
@@ -18,9 +18,7 @@ import { WebService } from './web.service';
         </mat-card>
     `
 })
-export class NewMessageComponent {
-
-    @Output() onPosted = new EventEmitter();
+export class NewMessageComponent { 
 
     message = {
         owner: '',
@@ -30,6 +28,5 @@ export class NewMessageComponent {
 
     post() {
         this.webService.postMessage(this.message);
-        this.onPosted.emit(this.message);
     }
 }
