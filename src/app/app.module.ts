@@ -13,6 +13,7 @@ import { WebService } from './web.service';
 import { MatButtonModule, MatCardModule, MatInputModule, MatSnackBarModule, MatToolbarModule } from '@angular/material';
 import { NavComponent } from './nav/nav.component';
 import { HomeComponent } from './home/home.component';
+import { RegisterComponent } from './register/register.component';
 
 
 var routes = [{
@@ -24,6 +25,9 @@ var routes = [{
 }, {
   path: 'messages/:name',
   component: MessageComponent
+}, {
+  path: 'register',
+  component: RegisterComponent
 }];
 
 @NgModule({
@@ -32,7 +36,8 @@ var routes = [{
     MessageComponent,
     NewMessageComponent,
     NavComponent,
-    HomeComponent
+    HomeComponent,
+    RegisterComponent
   ],
   imports: [
     HttpModule,
