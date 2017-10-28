@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { MessageComponent } from './messages.component';
 import { NewMessageComponent } from './new-messages.component';
 import { WebService } from './web.service';
+import { AuthService } from './auth.service';
 
 import { MatButtonModule, MatCardModule, MatInputModule, MatSnackBarModule, MatToolbarModule } from '@angular/material';
 import { NavComponent } from './nav/nav.component';
@@ -52,7 +53,7 @@ var routes = [{
     MatSnackBarModule,
     MatToolbarModule
   ],
-  providers: [WebService],
+  providers: [WebService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

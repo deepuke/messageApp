@@ -18,11 +18,14 @@ var messages = [
     }
 ];
 
+var users = [];
+
 app.use(bodyParser.json());
 
 app.use(cors());
 
 var api = express.Router();
+var auth = express.Router();
 
 api.get('/messages', (req, res) => {
     res.json(messages);
@@ -39,7 +42,14 @@ api.post('/messages', (req, res) => {
     res.json(req.body);
 });
 
+auth.post('/register', (req, res) => {
+	console.log(req.body);
+	users.push(req.body);
+    res.json(messages);
+});
+
 app.use('/api', api);
+app.use('/auth', auth);
 
 app.listen(63145);
 
