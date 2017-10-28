@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var cors = require('cors')
 var bodyParser = require('body-parser');
+var jwt = require('jsonwebtoken');
 
 var messages = [
     {
@@ -42,10 +43,12 @@ api.post('/messages', (req, res) => {
     res.json(req.body);
 });
 
-auth.post('/register', (req, res) => {
-	console.log(req.body);
-	users.push(req.body);
-    res.json(messages);
+auth.post('/register', (req, res) => {	
+	var index = users.push(req.body) - 1;
+	var user = users[index];
+	user.id = index;
+	var token =  jwt.sign(user.id, '123');
+    res.json({firstName: user.firstName, token});
 });
 
 app.use('/api', api);
