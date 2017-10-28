@@ -15,6 +15,7 @@ import { MatButtonModule, MatCardModule, MatInputModule, MatSnackBarModule, MatT
 import { NavComponent } from './nav/nav.component';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
 
 
 var routes = [{
@@ -38,7 +39,8 @@ var routes = [{
     NewMessageComponent,
     NavComponent,
     HomeComponent,
-    RegisterComponent
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     HttpModule,
